@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <div class="form-box">
+        <h1>Sign up</h1>
+        <div class="input-box">
+            <form action="login.html">
+                <h3>Username<br> <input type="text" name="Name" placeholder="Enter full name" required></h3>
+                <h3>Email ID<br> <input type="email" name="Email" placeholder="Enter email" required></h3>
+                <h3>Create Password<br> <input type="password" name="psw" placeholder="Create a password" id="Pass2"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, 
+                    and at least 8 or more characters" required</h3>
+                <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer; color: black;" ></i>
+                <h3>Re-enter Password<br> <input type="password" placeholder="Re-enter your password" id="Pass1"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, 
+                    and at least 8 or more characters" required </h3>
+                <i class="far fa-eye" id="togglePassword1" style="margin-left: -30px; cursor: pointer; color: black;" ></i>
+
+            
+        </div>
+           
+        <!--<h2>
+        <pre>
+            Gender: <input type="radio">Male <input type="radio">Female</pre></h2><br>-->
+            <center>
+                <input type="checkbox" required><font size=4>I Agree to all the terms and conditions of Bingepedia.</font><br><br>  
+                <button type="submit" onclick="check()">Signup</button>
+                <p id="login">Have an account?<a href="projectlogin.html" style="color: blanchedalmond;">Login</a> </p>
+            </center>
+        </form>
+    </div>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#Pass2');
+ 
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+        const togglePassword1 = document.querySelector('#togglePassword1');
+        const passi = document.querySelector('#Pass1');
+ 
+        togglePassword1.addEventListener('click', function (e) {
+            const type = passi.getAttribute('type') === 'password' ? 'text' : 'password';
+            passi.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+            
+        });
+        function check(){
+            var pass1=document.getElementbyId("Pass1").value;
+            var pass2=document.getElementbyId("Pass2").value;
+            if(pass1!=pass2){
+                alert("Password must be matching");
+                
+            }
+            
+
+            
+    
+        }
+        
+    </script>
+    </body>
+</html>
